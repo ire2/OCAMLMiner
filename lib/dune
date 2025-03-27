@@ -1,0 +1,8 @@
+(library
+ (name sweeper)
+ (instrumentation
+  (backend bisect_ppx))
+ (modules board load canvas_utils timer csv_manager canvas_utils_js)
+ (libraries js_of_ocaml js_of_ocaml-lwt csv)
+ (preprocess
+  (pps js_of_ocaml-ppx)))

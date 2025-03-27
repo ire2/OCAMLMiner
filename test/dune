@@ -1,0 +1,11 @@
+(test
+ (name test_canit)
+ (libraries ounit2 sweeper js_of_ocaml js_of_ocaml-lwt qcheck))
+
+(test
+ (name test_timer)
+ (libraries ounit2 sweeper))
+
+(test
+ (name test_csv_manager)
+ (libraries ounit2 sweeper))

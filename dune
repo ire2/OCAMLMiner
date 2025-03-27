@@ -1,0 +1,17 @@
+(executable
+ (name main)
+ (modules main)
+ (libraries sweeper js_of_ocaml-lwt lwt)
+ (modes byte)
+ (preprocess
+  (pps js_of_ocaml-ppx lwt_ppx)))
+
+(env
+ (dev
+  (flags
+   (:standard -w +a-4-7-9-27-29-30-32..42-44-45-48-50-60-66..70))))
+
+(rule
+ (targets main.js)
+ (action
+  (run %{bin:js_of_ocaml} --source-map %{dep:main.bc} -o %{targets} --pretty)))

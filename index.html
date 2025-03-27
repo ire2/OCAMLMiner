@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>OCaml Minesweeper</title>
+	<style>
+		body {
+			margin: 0;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			height: 100vh;
+			background-color: #999;
+		}
+
+		canvas {
+			background-color: #fff;
+			border: 1px solid #666;
+		}
+
+		#info {
+			margin-bottom: 10px;
+		}
+
+		#difficulty {
+			margin-bottom: 10px;
+		}
+	</style>
+	<link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet" />
+	<!-- 
+		Citation: Remix Icon Library
+		Icon Name: play-large-line
+		Link: remixicon.com
+		-->
+
+	<link rel="icon" type="image/x-icon" href="https://ocaml.org/favicon.ico" />
+	<!-- 
+		Citation: Official OCaml favicon.ico
+		Usage: Used for this site's favicon.ico as well; only used for educational purposes
+		Link: https://ocaml.org/favicon.ico
+		-->
+</head>
+
+<body>
+	<h1>OCaml Minesweeper</h1>
+	<div id="userInput">
+		<label for="username">Enter Username:</label>
+		<input type="text" id="username" />
+		<button id="submit-username">Submit</button>
+	</div>
+	<h2 id="welcome-message"></h2>
+	<div id="difficulty" style="display: none;">
+		<label for="difficultySelector">Select Difficulty:</label>
+		<select id="difficultySelector">
+			<option value="none">Select an option</option>
+			<option value="easy">Easy</option>
+			<option value="medium">Medium</option>
+			<option value="hard">Hard</option>
+		</select>
+		<button id="start-button"><i id="play-icon" class="ri-play-large-line"></i></button>
+	</div>
+	<div id="info" style="display: none;">
+		<span id="mineCount">Flags Remaining: 0</span> |
+		<span id="unrevealedCount">Unrevealed Cells: 0</span> |
+		<span id="timer-container">
+			<img src="images/timer.svg" alt="Timer Icon" height="24px" width="24px" />
+			<span id="timer-text"></span>
+		</span>
+	</div>
+	<div id="top-users">
+		<pre id="top-users-list"></pre>
+	</div>
+	<canvas id="my_canvas" width="0" height="0"></canvas>
+	<script src="./_build/default/main.js"></script>
+</body>
+
+</html>
